@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@source "../.flowbite-react/class-list.json";
+
+
+
+body{
+    @apply bg-blue-950 mx-4
+}
