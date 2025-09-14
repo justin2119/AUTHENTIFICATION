@@ -1,0 +1,23 @@
+meta {
+  name: Inscriptions
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/api/login
+  body: formUrlEncoded
+  auth: inherit
+}
+
+body:form-urlencoded {
+  nom: BINA
+  email: justinbina@gmail.com
+  password: 1234
+  confirm_password: 1234
+  prenom: Justin
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,20 @@
+meta {
+  name: Connexion
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/api/login/signup
+  body: formUrlEncoded
+  auth: inherit
+}
+
+body:form-urlencoded {
+  email: justinbina@gmail.com
+  password: 
+}
+
+settings {
+  encodeUrl: true
+}
