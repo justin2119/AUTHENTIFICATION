@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes,Route,BrowserRouter} from 'react-router'
+import { Routes,Route} from 'react-router'
 import Connexion from './components/Connexion'
 import Acceuil from './components/Acceuil'
 import Inscription from './components/Inscription'

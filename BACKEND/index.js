@@ -8,7 +8,7 @@ const corsAuth={
     origin:['http://localhost:5173'],
 }
 const app = express();
-connexion();
+connexion().then();
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 app.use(cors(corsAuth));
