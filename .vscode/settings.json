@@ -1,9 +1,11 @@
 {
     "eslint.enable": false,
     "cSpell.words": [
+        "Acceuil",
         "ajouter",
         "avec",
         "Connexion",
+        "Creer",
         "reuissi",
         "supprimer"
     ]

@@ -1,9 +1,17 @@
 import React from 'react'
+import { Routes,Route,BrowserRouter} from 'react-router'
+import Connexion from './components/Connexion'
+import Acceuil from './components/Acceuil'
+import Inscription from './components/Inscription'
 
 const App = () => {
   return (
     <div>
-      h1 
+      <Routes>
+        <Route path="/" element ={<Connexion/>}></Route>
+        <Route path="/acceuil" element ={<Acceuil/>}></Route>
+        <Route path="/inscription" element ={<Inscription/>}></Route>
+      </Routes>
     </div>
   )
 }
