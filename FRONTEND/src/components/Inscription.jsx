@@ -1,16 +1,19 @@
 import React from 'react'
+import { useNavigate } from 'react-router'
+
 
 
 const Inscription = () => {
-  const navigate0
+  const navigate =useNavigate()
+  
   function Submite(){
-
+    navigate("/")
   }
   return (
     <div className="w-full h-screen container ">
       <div className="w-1/2 mx-auto translate-y-[50%]">
       <marquee className=" text-2xl font-light text-blue-600 text-center mb-3">Bienvenus pour l'inscription</marquee>
-        <form action="">
+        <form action="" onSubmit={Submite}>
           <label className="w-full text-xl  font-light mb-1" htmlFor="username">Username</label> <br />
           <input className="border-2 w-full py-2  px-2 rounded-xl" type="text" name="username" id="" placeholder="Username" /> <br />
           <label className="w-full text-xl  font-light mb-1" htmlFor="username">Email</label> <br />
