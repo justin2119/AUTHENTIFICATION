@@ -10,7 +10,7 @@ const Login = () => {
     e.preventDefault()
     axios.post("http://localhost:3000/api/signup",{email,password})
     .then(res=>{
-      console.log(res)
+      console.log(res.data)
       navigate("acceuil")
     })
     .catch(err=>console.log(err))
