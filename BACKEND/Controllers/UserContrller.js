@@ -4,12 +4,13 @@ import jwt from "jsonwebtoken";
 const secret= process.env.secret
 // Ajouts d'utillisateur.
 export const Inscriptions= async (req, res) => {
+    const secretkey="dfhdfhlhfsklfdöföfsdöfjoifsdfdsfdhjsfhfsfndsfhffhsdfsdujsdddsjasjd333ujsdshds"
     const{nom,prenom,email,password,confirm_password} = req.body;
     const dataUser = await User.findOne({email})
     if(dataUser){
         res.status(400).json({message: "Vous avez deja un comptes "})
     }else if (password===confirm_password){
-        await User.create(
+     const student= await User.create(
             {
                 nom : req.body.nom,
                 prenom:req.body.prenom,
@@ -18,7 +19,8 @@ export const Inscriptions= async (req, res) => {
                 confirm_password:bcrypt.hashSync(req.body.confirm_password,10),
             }
         )
-        res.json({nom,prenom,email,password,confirm_password});
+       let token = jwt.sign({student},secretkey,{expiresIn: '1h'})
+        res.status(200).json({token:token})
     }else{
         res.json({message:"Verifier les mots de passe"})
     }
@@ -34,14 +36,13 @@ export const Connexion= async (req, res) => {
             if(!passwordIsValid){
                 return res.status(404).json({message:"Mots de  passe incorrect"})
             }
-            let token=jwt.sign({id:user._id},secret,passwordIsValid,{
-                expiresIn: 86400
-            });
-            res.json({token:token})
+            res.json({message:`Connexion reussi ${user.nom} `})
+
         })
         .catch(err=>{
             res.status(500).json({message:"Erreur"})
         })
+
 }
 
 // Liste Utlisateurs

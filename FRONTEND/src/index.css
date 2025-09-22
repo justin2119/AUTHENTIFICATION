@@ -4,4 +4,6 @@
 @source "../.flowbite-react/class-list.json";
 
 
-
+.bg{
+    background-color: blueviolet;
+}
