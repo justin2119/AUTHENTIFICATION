@@ -17,7 +17,8 @@ import Pdfview from "./components/Pdfview.jsx";
 const App = () => {
   return (
     <>
-     <div className={""}>
+        <div className={"text-9xl font-extrabold text-blue-600"}>Cette Application n'est pas disponiple pour les grand Ecran</div>
+     <div className={"md:hidden xl:hidden lg:hidden"}>
      <Logo/>
      <div className=' absolute top-10 -z-10'>
       <Routes>
