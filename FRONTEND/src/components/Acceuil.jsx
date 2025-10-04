@@ -1,42 +1,28 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router';
+import {useNavigate} from "react-router-dom";
+
 
 
 const Acceuil = () => {
-    return (
-        <div className={`bg`}>
-            <div>
-                <nav className='bg-blue-700 text-xl text-white  px-2'>
-                    <div className=' flex justify-between mx-5 py-4 '>
-
-                        <div>
-                            <label htmlFor="">COURS </label>
-                            <select className=' list-none cursor-pointer border-2 bg-blue-700 rounded-full px-3'>
-                                <option value="PHYSIQUE">PHYSIQUE</option>
-                                <option value="CHIMIE">CHIMIE</option>
-                                <option value="MATHEMATIQUE">MATHEMATIQUE</option>
-                                <option value="SVT">SVT</option>
-                                <option value="HISTOIRE-GEOGRAPHIE">HISTOIRE-GEOGRAPHIE</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label htmlFor="">EVALUATIONS </label>
-                            <select className=' list-none cursor-pointer bg-blue-700  rounded-full px-3 border-2'>
-                                <option value="DEVOIR">DEVOIR</option>
-                                <option value="COMPOSITIONS">COMPOSITIONS</option>
-                            </select>
-                        </div>
-                        <li className=' list-none cursor-pointer hover:underline'>EXAMEN BLANC</li>
-                        <li className=' list-none cursor-pointer hover:underline'>EXAMEN NATIONAL</li>
-                        <li className=' list-none cursor-pointer hover:underline'>A PROPOS</li>
-                        <li className=' list-none cursor-pointer hover:underline'>CONTACTS</li>
-                    </div>
-                </nav>
-                <div>
-
-                </div>
-            </div>
+    const navigate = useNavigate();
+    function handleNavigate() {
+        navigate("/cycle");
+    }
+  return (
+    <>
+       <div className='w-full h-[30vh] rounded-br-full border-b-4 border-r-4 green relative border-[#2b457e]'>
+            <h1 className='text-white text-4xl absolute font-normal top-16 left-8'>Acceuil</h1>
+       </div>
+       <div>
+         <div className='mt-20 mx-3 flex flex-col'>
+            <button onClick={handleNavigate} className='border-2 py-2 px-16 text-3xl  rounded-xl green text-white'>COURS</button>
+            <button onClick={handleNavigate} className='border-2 py-2 px-16 text-3xl  rounded-xl green text-white'>EVALUATIONS</button>
+            <button onClick={handleNavigate} className='border-2 py-2 px-16 text-3xl  rounded-xl green text-white'>DOCUMENTS</button>
         </div>
-    )
+       </div>
+       </>
+  );
 }
 
-export default Acceuil
+export default Acceuil;

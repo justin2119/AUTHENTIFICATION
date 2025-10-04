@@ -4,6 +4,13 @@
 @source "../.flowbite-react/class-list.json";
 
 
-.bg{
-    background-color: blueviolet;
+.blue{
+    background-color: #2b457e;
+    @apply text-white
+}
+.green{
+    background-color: #008f52;
+}
+.green-text{
+   @apply text-[#008f52]
 }
