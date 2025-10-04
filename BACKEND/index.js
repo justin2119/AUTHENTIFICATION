@@ -10,8 +10,8 @@ const corsAuth={
 const app = express();
 connexion().then();
 app.use(express.json());
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({extended:false}))
 app.use(cors(corsAuth));
-app.use("/api",routes)
+app.use(routes)
 
 app.listen(3000,()=>console.log('Le serveur est demarer sur le port 3000'));

@@ -1,11 +1,13 @@
 import express from "express";
-import {Connexion, Inscriptions, Users} from "../Controllers/UserContrller.js";
-import {verifyToken} from "../middleware/authJWT.js";
+import {Inscriptions} from "../Controllers/Inscription.js";
+import {VerifyInscription} from "../Middliware/Inscriptionverify.js";
+import {Connexion} from "../Controllers/Connexion.js";
 const routes = express.Router();
 
-routes.post("/login",Inscriptions)
-routes.post("/signup",verifyToken,Connexion)
-routes.get("/users",Users)
+routes.post("/inscription",VerifyInscription,Inscriptions)
+routes.post("/connexion",Connexion)
+
+
 
 
 

@@ -1,0 +1,26 @@
+meta {
+  name: Connexion
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:3000/connexion
+  body: formUrlEncoded
+  auth: basic
+}
+
+auth:basic {
+  username: richardadjicta132@gmail.com
+  password: 1234556
+}
+
+body:form-urlencoded {
+  : 
+  email: richardadjicta12@gmail.com
+  password: 1234556
+}
+
+settings {
+  encodeUrl: true
+}

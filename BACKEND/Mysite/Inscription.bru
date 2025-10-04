@@ -1,0 +1,25 @@
+meta {
+  name: Inscription
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:3000/inscription
+  body: formUrlEncoded
+  auth: basic
+}
+
+body:form-urlencoded {
+  email: olivia14@gmail.com
+  password: 123456
+  confirm_password: 123456
+}
+
+body:multipart-form {
+  : 
+}
+
+settings {
+  encodeUrl: true
+}

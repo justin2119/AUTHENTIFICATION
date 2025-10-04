@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 
-const url= "mongodb://localhost/Authentification"
+const url= "mongodb://localhost/SchoolPlus"
 export const connexion=(async ()=>{
     try {
         await mongoose.connect(url)
