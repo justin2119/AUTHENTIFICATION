@@ -2,10 +2,10 @@ import React from 'react';
 import {FaArrowLeft} from "react-icons/fa";
 import {useNavigate} from "react-router-dom";
 
-const Cycle = () => {
+const CycleCours = () => {
     const navigate = useNavigate();
     function BackNavigate() {
-        navigate(-1);
+        navigate("/acceuil",{replace: true});
     }
   return (
     <>
@@ -23,4 +23,4 @@ const Cycle = () => {
   );
 }
 
-export default Cycle;
+export default CycleCours;

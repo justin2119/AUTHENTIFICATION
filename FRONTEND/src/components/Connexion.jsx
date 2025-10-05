@@ -1,6 +1,6 @@
 import { Label } from 'flowbite-react';
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import {Link, redirect, useNavigate} from 'react-router-dom';
 import axios from "axios"
 
 const Connexion = () => {
@@ -12,11 +12,12 @@ const Connexion = () => {
         axios.post("http://localhost:3000/connexion",{email:email,password:password})
             .then((res)=>{
                 console.log(res)
-                navigate("/acceuil")
+                navigate("/connexion/acceuil")
 
             })
             .catch((err)=>{
                 console.log(err)
+                redirect("/connexion")
             })
         setEmail("")
         setPassword("")
