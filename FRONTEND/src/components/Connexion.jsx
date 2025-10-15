@@ -1,26 +1,23 @@
-import { Label } from 'flowbite-react';
 import React, { useState } from 'react';
-import {Link, redirect, useNavigate} from 'react-router-dom';
-import axios from "axios"
+import {Link, useNavigate} from 'react-router-dom';
+import axios from "axios";
 
 const Connexion = () => {
-
+    const navigate = useNavigate();
     const[email,setEmail]=useState("")
     const[password,setPassword]=useState("")
-    const navigate=useNavigate()
-    function HandleSubmite(){
+    const Login=()=>{
         axios.post("http://localhost:3000/connexion",{email:email,password:password})
-            .then((res)=>{
-                console.log(res)
-                navigate("/connexion/acceuil")
-
-            })
-            .catch((err)=>{
-                console.log(err)
-                redirect("/connexion")
-            })
-        setEmail("")
-        setPassword("")
+        .then((user)=>{
+            if(user){
+                localStorage.setItem("token",user.data.token)
+                console.log(user.data.token);
+                navigate("/acceuil")
+            }
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
     }
   return (
        <div>
@@ -38,7 +35,7 @@ const Connexion = () => {
                 <input className='w-full border-2 border-blue-900 rounded py-2 pl-2' type="password" value={password} onChange={(e)=>setPassword(e.target.value)} name="password" placeholder='Mot de passe' />
             </div>
             <Link to="/inscription" className='float-end underline'>Inscription</Link> <br />
-            <Link><input onClick={HandleSubmite} className='border-2 text-white text-xl  bg-[#2b457e] px-4 text-center rounded-md  py-2 mt-3' type="submit" value={"Connexion"} /></Link>
+            <Link><input onClick={Login} className='border-2 text-white text-xl  bg-[#2b457e] px-4 text-center rounded-md  py-2 mt-3' type="submit" value={"Connexion"} /></Link>
         </form>
        </div>
        </div>

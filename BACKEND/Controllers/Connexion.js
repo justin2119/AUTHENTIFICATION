@@ -1,7 +1,7 @@
 
 import {User} from "../models/Authmodel.js";
 import bcrypt from "bcryptjs";
-import {MakeToken} from "../Middliware/MakeToken.js";
+import jwt from "jsonwebtoken";
 
 
 export const Connexion= async (req, res) => {
@@ -15,8 +15,8 @@ export const Connexion= async (req, res) => {
            if (!pwd) {
                res.status(400).send("Mot de pass incorrect")
            }
-          let token= MakeToken(user)
-           return res.status(200).json({user:user})
+           let token = jwt.sign({user}, process.env.secretkey, {expiresIn: "24H"})
+           return res.status(200).json({token:token})
        })
 
 }

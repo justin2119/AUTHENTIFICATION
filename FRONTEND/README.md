@@ -10,3 +10,14 @@ Currently, two official plugins are available:
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<Routes>
+<Route path="/" element={<ScreenSplash/>}/>
+<Route path="/connexion" element={<Connexion/>}/><Route path="/acceuil" element={<Acceuil/>}/>
+<Route path="/inscription" element={<Inscription/>}/>
+<Route path="/classesly" element={<ClassesLycee/>}/>
+<Route path="/classescl" element={<ClasseCollege/>}/>
+<Route path="/courslycee" element={<CoursLy/>}/>
+<Route path="/courscollege" element={<CoursCollege/>}/>
+<Route path="/evaluation" element={<Evaluations/>}/>
+<Route path="/chapitrelycee" element={<CoursChapitreLycee/>}/><Route path="/pdf" element={<pdfview/>}/>
+</Routes>

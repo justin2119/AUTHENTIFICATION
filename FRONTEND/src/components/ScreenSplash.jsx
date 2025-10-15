@@ -1,9 +1,12 @@
 import React from 'react';
-import {Button} from "flowbite-react"
 import { FaArrowRight } from 'react-icons/fa6';
-import { Link } from 'react-router';
+import {useNavigate} from 'react-router-dom';
 
 const ScreenSplash = () => {
+    const navigate = useNavigate();
+    const Next=()=>{
+        navigate('/connexion');
+    }
   return (
     <div className='w-full h-[50vh]'>
      <div className=' h-[40vh] pr-16 rounded-br-full bg-[#008f52] border-r-4 border-b-4 border-[#2b457e] '>
@@ -17,9 +20,7 @@ const ScreenSplash = () => {
       <img src="/logo.png" alt="logo" />
      </div>
       <div className='w-[25%] pl-3 mx-auto bg'>
-       <Link to="/connexion">
-       <button className='text-2xl rounded-full border-2 p-3 blue'><FaArrowRight/></button>
-       </Link>
+       <button onClick={Next} className='text-2xl rounded-full border-2 p-3 blue'><FaArrowRight/></button>
       </div>
     </div>
   );

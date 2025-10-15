@@ -1,43 +1,35 @@
 import React from 'react';
 import Logo from './components/All/Logo';
-import ScreenSplash from './components/ScreenSplash';
-import {Routes,Route} from "react-router-dom"
-import Connexion from './components/Connexion';
+import ScreenSplash from "./components/ScreenSplash.jsx";
+import {Route, Routes} from 'react-router-dom';
+import Acceuil from './components/Acceuil.jsx';
+import Connexion from './components/Connexion.jsx';
 import Inscription from './components/Inscription';
-import Acceuil from './components/Acceuil';
-import CycleCours from './components/CycleCours.jsx';
+import ContextApp from '../Context/Context.jsx';
+import SectionCours from "./components/SectionCours.jsx";
+import SectionEvaluations from "./components/SectionEvaluations.jsx";
+import SectionDocuments from "./components/SectionDocuments.jsx";
 import ClassesLycee from './components/ClassesLycee';
-import ClasseCollege from './components/ClasseCollege';
-import CoursLy from './components/CoursLy';
-import CoursCollege from './components/CoursCollege';
-import Evaluations from './components/Evaluations';
-import CoursChapitreLycee from './components/CoursChapitreLycee';
-import Pdfview from "./components/Pdfview.jsx";
+import CoursLy from './components/CoursLy.jsx';
 
 const App = () => {
   return (
-    <>
-        <div className={"text-9xl font-extrabold text-blue-600 hidden"}>Cette Application n'est pas disponiple pour les grand Ecran</div>
-     <div className={"md:hidden xl:hidden lg:hidden"}>
+    <ContextApp>
+       <div className={""}>
      <Logo/>
-     <div className=' absolute top-10 -z-10'>
-      <Routes>
-      <Route path="/" element={<ScreenSplash/>}/>
-      <Route path="/connexion" element={<Connexion/>}>
-          <Route path="/connexion/acceuil" element={<Acceuil/>}/>
-      </Route>
-      <Route path="/inscription" element={<Inscription/>}/>
-      <Route path="/cycle" element={<CycleCours/>}/>
-      <Route path="/classesly" element={<ClassesLycee/>}/>
-      <Route path="/classescl" element={<ClasseCollege/>}/>
-      <Route path="/courslycee" element={<CoursLy/>}/>
-      <Route path="/courscollege" element={<CoursCollege/>}/>
-      <Route path="/evaluation" element={<Evaluations/>}/>
-      <Route path="/chapitrelycee" element={<CoursChapitreLycee/>}/>
+     <Routes>
+      <Route path='/' element={<ScreenSplash/>}/>
+      <Route path="acceuil" element={<Acceuil/>}/>
+      <Route path="connexion" element={<Connexion/>}/>
+      <Route path="inscription" element={<Inscription/>}/>
+      <Route path="acceuil/evaluations" element={<SectionEvaluations/>} />
+      <Route path="acceuil/cours" element={<SectionCours/>} />
+      <Route path="acceuil/documents" element={<SectionDocuments/>} />
+      <Route path="classelycee" element={<ClassesLycee/>} />
+      <Route path="courslycee" element={<CoursLy/>} />
      </Routes>
-     </div>
     </div>
-    </>
+    </ContextApp>
   );
 }
 
